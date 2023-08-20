@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ajustes</title>
+  <link rel="icon" href="images/Logo.png" type="image/x-icon">
+  <link rel="shortcut icon" href="images/Logo.png" type="image/x-icon">
+  <link rel="stylesheet" href="styles/ajustes.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div>
+    <img src="images/Logo.png" alt="Logo">
+  </div>
+
+  
+
+   <div class="formE">
+    <label for="descuentoProfesionalHerramientas">Profesional-Herramientas:</label>
+    <input type="number" id="descuentoProfesionalHerramientas" name="descuentoProfesionalHerramientas">
+    </div>
+
+   <div class="formE">
+            <label for="descuentoMayoristaHerramientas">Mayorista-Herramientas</label>
+            <input type="number" id="descuentoMayoristaHerramientas" name="descuentoMayoristaHerramientas">
+   </div>
+
+   
+   <div class="formE">
+    <label for="descuentoProfesionalAccesorios">Profesional-Accesorios:</label>
+    <input type="number" id="descuentoProfesionalAccesorios" name="descuentoProfesionalAccesorios">
+  </div>
+  
+  <div class="formE">
+    <label for="descuentoMayoristaAccesorios">Mayorista-Accesorios:</label>
+    <input type="number" id="descuentoMayoristaAccesorios" name="descuentoMayoristaAccesorios">
+  </div>
+  
+
+     <div class="formE">
+      <label for="descuentoProfesionalProductos">Profesional-Productos:</label>
+      <input type="number" id="descuentoProfesionalProductos" name="descuentoProfesionalProductos">
+      </div>
+  
+      <div class="formE">
+        <label for="descuentoMayoristaProductos">Mayorista-Productos:</label>
+        <input type="number" id="descuentoMayoristaProductos" name="descuentoMayoristaProductos">
+      </div>
+
+    <div class="button-container button-link">
+      <button onclick="agregarDescuentos()"><span>Agregar Descuentos</span></button>
+    </div>
+  </div>
+  
+  
+  <div class="mensajeA" id="mensaje" style="display: none;"></div>
+
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+  <script src="main/ajustes.js"></script>
+</body>
+</html>

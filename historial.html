@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Historial</title>
+  <link rel="icon" href="images/Logo.png" type="image/x-icon">
+  <link rel="shortcut icon" href="images/Logo.png" type="image/x-icon">
+  <link rel="stylesheet" href="styles/historial.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div ><img src="images/Logo.png" alt="Logo">
+    
+  </div>
+
+  <div class="mensajeA" id="mensaje" style="display: none;"></div>
+  <div class="buscador">
+    <input  type="text" id="busqueda" placeholder="Buscar cliente" oninput="buscar(event)">
+  </div>
+  
+
+  <div class="resultadoBusqueda  listaP" id="resultadoBusqueda">
+    <ul>
+      <!-- Aquí se mostrarán los resultados de la búsqueda -->
+    </ul>
+  </div>
+  
+
+ 
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+ 
+  <script src="main/historial.js"></script>
+</body>
+</html>

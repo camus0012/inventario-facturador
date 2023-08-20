@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inventario</title>
+  <link rel="icon" href="images/Logo.png" type="image/x-icon">
+  <link rel="shortcut icon" href="images/Logo.png" type="image/x-icon">
+  <link rel="stylesheet" href="styles/inventario.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div>
+    <img src="images/Logo.png" alt="Logo">
+  </div>
+
+  <form class="formE" id="formulario">
+    <input type="text" id="id" placeholder="ID" required>
+    <input type="text" id="nombre" placeholder="Nombre" required>
+    <input type="date" id="vencimiento" required>
+    <input type="number" id="precio" placeholder="Precio" required>
+    <input type="number" id="cantidad" placeholder="Cantidad" required>
+    <div>
+      
+      <div class="formE">
+            
+      <label for="tipo">Tipo de producto:</label>
+      <select id="tipo" name="tipo">
+        <option value="indefinido">Indefinido</option>
+        <option value="herramientas">Herramientas</option>
+        <option value="accesorios">Accesorios</option>
+        <option value="productos">Productos</option>
+      </select>
+     
+      </div>
+      
+  
+    </div>
+    
+    <div class="button-container button-link">
+      <button class="buttonA"  type="submit"><span>Agregar</span></button>
+    </div>
+  </form>
+
+  <div class="mensajeA" id="mensaje" style="display: none;"></div>
+  <div class="buscador">
+    <input  type="text" id="busqueda" placeholder="Buscar por nombre o ID" oninput="buscar(event)">
+  </div>
+  
+
+  <div class="resultadoBusqueda  listaP" id="resultadoBusqueda">
+    <ul>
+      <!-- Aquí se mostrarán los resultados de la búsqueda -->
+    </ul>
+  </div>
+
+  <div class="listaP" id="listaProductos">
+    <ul>
+      <!-- Aquí se mostrarán los productos -->
+    </ul>
+  </div>
+
+  <div>
+    <p>Productos vencidos o por vencerse:</p>
+  </div>
+
+  <div class="listaP" id="listaProductosVencidos"> 
+    <ul>
+      <!-- Aquí se mostrarán los productos vencidos o por vencerse-->
+    </ul>
+  </div>
+
+  <script>document.addEventListener('DOMContentLoaded', function () {
+    // Selecciona el primer campo del formulario por su id y enfócalo
+    document.getElementById('id').focus();
+  
+    const fields = document.querySelectorAll('.formE input, .formE select');
+    let currentField = 0;
+  
+    const addButton = document.querySelector('.button-container button');
+  
+    document.addEventListener('keydown', function (event) {
+        // Verifica si se ha presionado la tecla "Ctrl" (código 17)
+        if (event.keyCode === 17) {
+            // Incrementa el índice para pasar al siguiente campo
+            currentField = (currentField + 1) % fields.length;
+            // Enfoca el siguiente campo
+            fields[currentField].focus();
+            // Previene el comportamiento predeterminado del evento (por ejemplo, abrir el menú de impresión en el navegador)
+            event.preventDefault();
+        }
+  
+        // Verifica si se ha presionado la tecla "Shift" (código 16)
+        if (event.keyCode === 16) {
+            // Previene el comportamiento predeterminado del evento
+            event.preventDefault();
+            // Simula el clic en el botón "Agregar"
+            addButton.click();
+        }
+    });
+  });</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+  <script src="main/inventario.js"></script>
+  
+  
+</body>
+</html>
+
+
+
+
+

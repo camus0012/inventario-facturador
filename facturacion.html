@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Facturación</title>
+  <link rel="icon" href="images/Logo.png" type="image/x-icon">
+  <link rel="shortcut icon" href="images/Logo.png" type="image/x-icon">
+  <link rel="stylesheet" href="styles/facturacion.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div>
+    <img src="images/Logo.png" alt="Logo">
+  </div>
+
+  <div class="formE">
+    <label for="producto">Producto:</label>
+    <input type="text" id="producto" name="producto">
+
+    <label for="cantidad">Cantidad:</label>
+    <input type="number" id="cantidad" name="cantidad">
+
+    <label  for="cliente">Cliente:</label>
+    <input type="text" id="cliente" name="cliente">
+
+    <label for="dni">DNI:</label>
+    <input type="number" id="dni" name="dni">
+
+    <div class="formE">
+      <label  for="tipo-cliente">Tipo de cliente:</label>
+    <select id="tipo-cliente" name="tipo-cliente">
+      <option value="publico">Público</option>
+      <option value="mayorista">Mayorista</option>
+      <option value="profesional">Profesional</option> 
+    </select>
+    </div>
+    
+
+
+    <div class="button-container button-link">
+      <button onclick="agregarProducto()"><span>Agregar</span></button>
+    </div>
+
+  </div>
+
+  
+  <div id="pdfContent">
+    <div class="listaP" id="listaProductosPorVender"> 
+      <div class="mensajeP" id="mensaje"></div>
+      <div >
+        Razón social: Peluqueria Marcos Unisex
+      </div>
+      <div >
+        Fecha: <span id="fechaData"></span>
+      </div>
+      <div >
+        Cliente: <span id="clienteData"></span>
+      </div>
+      <div >
+        DNI: <span id="dniData"></span>
+      </div>
+   
+
+      <div >
+      <ul id="productosData">
+        <!-- Aquí se mostrarán los productos que serán vendidos -->
+      </ul>
+      </div>
+     
+    </div>
+    <div>
+      <span  class="colorP " id="total"></span>
+    </div>
+  </div>
+
+ 
+  
+
+
+  <div class="button-container button-link">
+    <button onclick="imprimirFactura()"><span>Imprimir factura</span></button>
+  </div>
+
+  
+
+  <div class="button-container button-link">
+     <a href="https://auth.afip.gob.ar/contribuyente_/login.xhtml?action=SYSTEM&system=factusim" class="button-link">
+      <button><span>Facturador AFIP</span></button>
+    </a>
+  </div>
+  
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+ 
+
+  <script src="main/facturacion.js"></script>
+  <script src="main/impresion.js"></script>
+  <script src="main/comandos.js"></script>
+
+</body>
+</html>
+
